@@ -1,0 +1,31 @@
+title OBO PURL workflow
+
+participant Browser
+participant OBO Admin
+participant Fred
+participant GitHub
+participant Travis
+participant EC2
+
+Fred->+GitHub : Edit config via UI
+note right of GitHub: create branch
+GitHub->-Fred : branch
+Fred->+GitHub : Make Pull Request
+GitHub->+Travis: Trigger test
+note right of Travis: checks against json-schema
+note right of Travis: tests build in Ansible
+Travis->-GitHub: Success
+GitHub->-Fred: Success
+
+OBO Admin->+GitHub: merge Pull Request
+GitHub->Travis: Trigger test
+Travis->GitHub: Success
+GitHub->-OBO Admin: Success
+
+
+EC2->GitHub: poll config files
+GitHub->EC2: return configs
+note left of EC2: recompile Apache conf
+EC2->EC2: restart Apache
+Browser->+EC2: http GET on PURL
+EC2->-Browser: 302
