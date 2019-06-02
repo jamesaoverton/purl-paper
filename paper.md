@@ -1,6 +1,6 @@
 # Abstract
 
-[TODO: Finish abstract]
+FAIR data requires unique and persistent identifiers. Persistent Uniform Resource Locators (PURLs) are one common solution, introducing a mapping layer from the permanent identifier to a target URL that can change over time. Maintaining a PURL system requires long-term commitment and resources, and this can present a challenge for open projects that rely heavily on volunteers and donated resources. When the PURL system used by the Open Biological and Biomedical Ontologies (OBO) community suffered major technical problems in 2015, OBO developers had to migrate quickly to a new system. We describe that migration, the new OBO PURL system that we built, and the key factors behind our design. The OBO PURL system is low-cost and low-maintenance, built on well-established open source software, customized to the needs of the OBO community, and shows how key FAIR principles can be supported on a tight budget.
 
 # Background
 
